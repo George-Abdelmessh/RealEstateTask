@@ -1,16 +1,18 @@
 # real_estate_task
 
-A new Flutter project.
+A Flutter project To For Real Estate.
 
-## Getting Started
+### How to run the app
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To get a local copy up and running follow these simple steps:
+- Clone the repo
+- open the project in your IDE
+- in a terminal, cd to the project directory
+- run the following command to install the dependencies
+```
+flutter pub get
+```
+- run the following command to run the app and clear animation jank
+```
+flutter run --release --purge-persistent-cache
+```
