@@ -4,12 +4,14 @@ import 'package:real_estate_task/core/constant/app_image.dart';
 import 'package:real_estate_task/features/home/controller/home_states.dart';
 import 'package:real_estate_task/features/home/view/cards/slider_content_card.dart';
 
-class HomeCubit extends Cubit<HomeStates>{
-  HomeCubit(): super(HomeInitialState());
+class HomeCubit extends Cubit<HomeStates> {
+  HomeCubit() : super(HomeInitialState());
 
   static HomeCubit get(BuildContext context) => BlocProvider.of(context);
 
   int index = 0;
+  int selectedView = 0;
+  final PageController pageController = PageController(initialPage: 0);
 
   final List<SliderContentCard> sliderList = [
     SliderContentCard(
@@ -35,5 +37,15 @@ class HomeCubit extends Cubit<HomeStates>{
   void changeIndex(int currentIndex) {
     index = currentIndex;
     emit(ChangeSliderState());
+  }
+
+  void changeView(int currentIndex) {
+    selectedView = currentIndex;
+    pageController.animateToPage(
+      selectedView,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.ease,
+    );
+    emit(ChangeViewState());
   }
 }

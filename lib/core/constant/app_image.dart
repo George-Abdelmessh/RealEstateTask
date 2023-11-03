@@ -19,4 +19,7 @@ class AppImage {
   static String cat5 = '$svg/5.svg';
 
 
+  static String order = '$image/order.png';
+
+
 }
