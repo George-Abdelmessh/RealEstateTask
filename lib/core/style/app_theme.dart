@@ -4,18 +4,24 @@ import 'app_color.dart';
 
 class AppTheme {
   static ThemeData appLightTheme = ThemeData(
-    fontFamily: 'CairoFont',
+    fontFamily: 'OutfitFont',
     primaryColor: AppColor.primary,
     colorScheme: ColorScheme.fromSwatch().copyWith(secondary: AppColor.primary),
     scaffoldBackgroundColor: AppColor.white,
     unselectedWidgetColor: Colors.white,
+
+    textTheme: const TextTheme(
+      bodySmall: TextStyle(fontFamily: 'OutfitFont'),
+      bodyMedium: TextStyle(fontFamily: 'OutfitFont'),
+      bodyLarge: TextStyle(fontFamily: 'OutfitFont'),
+    ),
 
     /// AppBar ThemeData
     appBarTheme: const AppBarTheme(
       iconTheme: IconThemeData(color: AppColor.white),
       titleTextStyle: TextStyle(
         fontSize: 20.0,
-        fontFamily: 'CairoFont',
+        fontFamily: 'OutfitFont',
         fontWeight: FontWeight.bold,
         color: AppColor.white,
       ),
@@ -37,7 +43,7 @@ class AppTheme {
       type: BottomNavigationBarType.fixed,
       backgroundColor: AppColor.white,
       selectedItemColor: AppColor.primary,
-      unselectedItemColor: AppColor.grey,
+      unselectedItemColor: AppColor.darkGrey,
       selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
     ),
   );
