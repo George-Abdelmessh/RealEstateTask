@@ -10,29 +10,20 @@ class AppColor {
   /// BLACK COLOR
   static const Color black = Color(0xff000000);
 
-  /// OVER LAY COLOR [ BLACK WITH OPACITY 0.3 ]
-  static Color overlay = black.withOpacity(0.3);
+  /// DARK GREY COLOR
+  static const Color darkGrey = Color(0xff707070);
 
   /// GREY COLOR
-  static const Color grey = Color(0xffE0E0E0);
+  static const Color grey = Color(0xffF2F2F2);
+
+  /// LIGHT GREY COLOR
+  static const Color lightGrey =  Color(0xffFAFAFA);
 
   /// PRIMARY COLOR IN APP
-  static const Color primary = Color(0xffB68922);
+  static const Color primary = Color(0xffd61116);
 
   /// SECONDARY COLOR IN APP
-  static const Color secondary = Color(0xff18499A);
+  static const Color secondary = Color(0xffFFF5F5);
 
-  /// Orange COLOR IN APP
-  static const Color orange = Color(0xffED7E21);
-
-  /// Green COLOR IN APP
-  static const Color green = Color(0xff1BC931);
-
-  /// Brown COLOR IN APP
-  static const Color brown = Color(0xff874F12);
-
-  /// Brown COLOR IN APP
-  static const Color focus = Color(0xffF9E18D);
-  //0x874F12
 
 }
