@@ -23,13 +23,7 @@ dependencies:
 
   # App Controller And Helpers
   flutter_bloc: ^8.1.3
-  freezed: ^2.4.5
-  freezed_annotation: ^2.4.1
-  json_annotation: ^4.8.1
-  intl: ^0.18.1
 
-  # Remote Network
-  dio: ^5.3.3
 
 dev_dependencies:
   flutter_test:
@@ -38,8 +32,6 @@ dev_dependencies:
   # App Analyzer
   lint: ^2.1.2
   flutter_lints: ^2.0.0
-  json_serializable: ^6.7.1
-  build_runner: ^2.4.6
 
 
 flutter:
