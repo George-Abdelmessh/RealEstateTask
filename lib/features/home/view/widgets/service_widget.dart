@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_task/core/constant/screen_size.dart';
 import 'package:real_estate_task/core/style/app_color.dart';
-import 'package:real_estate_task/features/home/controller/home_cubit.dart';
+import 'package:real_estate_task/features/home/controller/home/home_cubit.dart';
+import 'package:real_estate_task/features/home/controller/user/user_cubit.dart';
+import 'package:real_estate_task/features/home/data/user_data.dart';
 import 'package:real_estate_task/features/home/view/cards/not_found_card.dart';
 import 'package:real_estate_task/features/home/view/cards/service_option_card.dart';
 import 'package:real_estate_task/features/home/view/widgets/category_widget.dart';
@@ -19,6 +21,12 @@ class _ServiceWidgetState extends State<ServiceWidget> {
     const NotFoundCard(title: 'order',),
     const NotFoundCard(title: 'service',),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    UserDataCubit.get(context).getUserData(UserData());
+  }
 
   @override
   Widget build(BuildContext context) {

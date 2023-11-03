@@ -3,12 +3,12 @@ import 'package:real_estate_task/core/constant/app_image.dart';
 import 'package:real_estate_task/core/constant/screen_size.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:real_estate_task/core/style/app_color.dart';
-import 'package:real_estate_task/features/home/data/model/category/category_model.dart';
+import 'package:real_estate_task/features/home/data/model/user/user_model.dart';
 
-class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key, required this.date});
+class UserDataCard extends StatelessWidget {
+  const UserDataCard({super.key, required this.date});
 
-  final CategoryModel date;
+  final UserModel date;
 
   @override
   Widget build(BuildContext context) {
@@ -29,21 +29,21 @@ class CategoryCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SvgPicture.asset(
-            date.icon,
-            width: AppSize.widthScale(context, 25),
-            height: AppSize.widthScale(context, 25),
+          Text(
+            '${date.id}',
+            style: TextStyle(
+              fontSize: AppSize.widthScale(context, 16),
+              fontWeight: FontWeight.w400,
+            ),
           ),
           SizedBox(
             width: AppSize.widthScale(context, 8),
           ),
-          Text(
-              date.title,
+          Text(date.name!,
               style: TextStyle(
                 fontSize: AppSize.widthScale(context, 16),
                 fontWeight: FontWeight.w400,
-              )
-          ),
+              )),
           const Spacer(),
           SvgPicture.asset(
             AppImage.arrow,

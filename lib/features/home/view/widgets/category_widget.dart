@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate_task/core/constant/app_image.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_task/core/constant/screen_size.dart';
 import 'package:real_estate_task/core/style/app_color.dart';
-import 'package:real_estate_task/features/home/data/model/category/category_model.dart';
+import 'package:real_estate_task/features/home/controller/user/user_cubit.dart';
+import 'package:real_estate_task/features/home/controller/user/user_states.dart';
 import 'package:real_estate_task/features/home/view/cards/category_card.dart';
 
 class CategoryWidget extends StatefulWidget {
@@ -13,14 +14,7 @@ class CategoryWidget extends StatefulWidget {
 }
 
 class _CategoryWidgetState extends State<CategoryWidget> {
-
-  List<CategoryModel> categoryList = [
-    CategoryModel(AppImage.cat1, 'Constructions'),
-    CategoryModel(AppImage.cat2, 'Insurances'),
-    CategoryModel(AppImage.cat4, 'Legal'),
-    CategoryModel(AppImage.cat3, 'Buy & Sell'),
-    CategoryModel(AppImage.cat5, 'Accounting Services'),
-  ];
+  
 
   @override
   Widget build(BuildContext context) {
@@ -51,21 +45,51 @@ class _CategoryWidgetState extends State<CategoryWidget> {
         SizedBox(
           height: AppSize.heightScale(context, 13),
         ),
-        Expanded(
-          child: ListView.separated(
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (BuildContext context, int i) {
-              return CategoryCard(
-                date: categoryList[i],
+        BlocBuilder<UserDataCubit, UserStates>(
+          builder: (context, state) {
+            if (state is LoadingUserDataState) {
+              return const Center(child: CircularProgressIndicator(
+                color: AppColor.primary,
+              ),);
+            } else if(state is SuccessUserDataState) {
+              return Expanded(
+                child: ListView.separated(
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (BuildContext context, int i) {
+                    return UserDataCard(
+                      date: state.result[i],
+                    );
+                  },
+                  separatorBuilder: (BuildContext context, int i) {
+                    return SizedBox(
+                      height: AppSize.widthScale(context, 10),
+                    );
+                  },
+                  itemCount: state.result.length,
+                ),
               );
-            },
-            separatorBuilder: (BuildContext context, int i) {
-              return SizedBox(
-                height: AppSize.widthScale(context, 10),
+            } else if (state is ErrorUserDataState) {
+              return Center(
+                child: Text(
+                  state.error,
+                  style: TextStyle(
+                    fontSize: AppSize.widthScale(context, 22),
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               );
-            },
-            itemCount: categoryList.length,
-          ),
+            }else {
+              return Center(
+                child: Text(
+                  "Not found",
+                  style: TextStyle(
+                    fontSize: AppSize.widthScale(context, 22),
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              );
+            }
+          }
         ),
       ],
     );

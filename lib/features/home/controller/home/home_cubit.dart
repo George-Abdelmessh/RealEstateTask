@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_task/core/constant/app_image.dart';
-import 'package:real_estate_task/features/home/controller/home_states.dart';
+import 'package:real_estate_task/features/home/controller/home/home_states.dart';
 import 'package:real_estate_task/features/home/view/cards/slider_content_card.dart';
 
 class HomeCubit extends Cubit<HomeStates> {

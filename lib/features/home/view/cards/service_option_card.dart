@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_task/core/constant/screen_size.dart';
 import 'package:real_estate_task/core/shared_widgets/custom_button.dart';
 import 'package:real_estate_task/core/style/app_color.dart';
-import 'package:real_estate_task/features/home/controller/home_cubit.dart';
-import 'package:real_estate_task/features/home/controller/home_states.dart';
+import 'package:real_estate_task/features/home/controller/home/home_cubit.dart';
+import 'package:real_estate_task/features/home/controller/home/home_states.dart';
 
 class ServiceOptionCard extends StatefulWidget {
   const ServiceOptionCard({super.key});

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:real_estate_task/core/style/app_theme.dart';
-import 'package:real_estate_task/features/home/controller/home_cubit.dart';
+import 'package:real_estate_task/features/home/controller/home/home_cubit.dart';
+import 'package:real_estate_task/features/home/controller/user/user_cubit.dart';
 import 'package:real_estate_task/features/home/view/home_screen.dart';
 
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (BuildContext context) => HomeCubit()),
+        BlocProvider(create: (BuildContext context) => UserDataCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
