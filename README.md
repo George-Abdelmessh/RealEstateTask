@@ -1,6 +1,6 @@
-# real_estate_task
+# Real Estate App
 
-A Flutter project To For Real Estate.
+A Flutter Project To For Real Estate.
 
 ### How to run the app
 
