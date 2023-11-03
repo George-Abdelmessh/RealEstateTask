@@ -3,7 +3,7 @@ import 'package:real_estate_task/core/constant/app_image.dart';
 import 'package:real_estate_task/core/constant/screen_size.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:real_estate_task/core/style/app_color.dart';
-import 'package:real_estate_task/features/home/modle/category/category_modle.dart';
+import 'package:real_estate_task/features/home/data/model/category/category_model.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({super.key, required this.date});
