@@ -18,8 +18,8 @@ class ServiceWidget extends StatefulWidget {
 class _ServiceWidgetState extends State<ServiceWidget> {
   List<Widget> viewWidget = [
     const CategoryWidget(),
-    const NotFoundCard(title: 'order',),
     const NotFoundCard(title: 'service',),
+    const NotFoundCard(title: 'order',),
   ];
 
   @override
